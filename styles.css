@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+h1, h2, p {
+    color: black;
+    font-family: "Inter", sans-serif;
+    padding: 0 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+a {
+    color: black;
+    transition: color 0.5s;
+    cursor: pointer;
+}
+
+a:hover {
+    color: green;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+table thead {
+    border: 1px solid black;
+}
+
+table thead th {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+table tbody {
+    border: 1px solid black;
+}
+
+table tbody td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+/* Главный контейнер */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0;
+}
+
+/* Header */
+header {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+header > nav {
+    padding: 0;
+    margin: 1rem 0;
+}
+
+header > nav > ul {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* main */
+main {
+    text-align: start;
+    width: 100%;
+}
+
+#info-company > p {
+    margin: 0 1rem;
+}
+
+/* footer */
+footer {
+    display: block;
+    margin-top: 2rem;
+    width: 100%;
+    background-color: black;
+    padding: 1rem;
+}
+
+footer p {
+    color: white;
+    margin: 0;
+}
+
+footer p > a {
+    color: grey;
+    font-weight: bold;
+}
+
+/* Медиа-запросы */
+@media (max-width: 1024px) {
+
+    
+    header > nav > ul {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    header > nav > ul {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+    
+    table thead th,
+    table tbody td {
+        padding: 0.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+        padding: 0 0.5rem;
+    }
+    
+    p {
+        padding: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        padding: 0 0;
+    }
+    
+    header > nav > ul {
+        gap: 0.5rem;
+    }
+    
+    header > nav > ul li a {
+        font-size: 0.9rem;
+    }
+    
+    table {
+        font-size: 0.8rem;
+    }
+    
+    table thead th,
+    table tbody td {
+        padding: 0.3rem;
+    }
+    
+    #info-company > p {
+        margin: 0 0.5rem;
+    }
+}
+
+@media (max-width: 320px) {
+    table {
+        font-size: 0.75rem;
+    }
+    
+    table thead th,
+    table tbody td {
+        padding: 0.2rem;
+    }
+}
