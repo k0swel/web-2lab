@@ -19,6 +19,15 @@ header {
     padding: 0 2rem;
 }
 
+header nav {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 1.5rem;
+}
+
 footer {
     background-color: black;
     width: 100%;
@@ -33,22 +42,20 @@ footer {
 
 footer a {
     font-weight: bold;
+    line-height: 0px;
 }
 
-nav {
-    align-self: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: 1.5rem;
-}
 
 a {
     color: white;
     text-decoration: none;
     transition: color 0.5s ease 0s;
 }
+
+a:hover {
+    color: rgb(77, 140, 37);
+}
+
 
 body {
     margin: 0px 0px;
@@ -61,10 +68,6 @@ main {
 main > section > h2 {
     margin-top: 3rem;
     margin-bottom: 2rem;
-}
-
-a:hover {
-    color: rgb(77, 140, 37);
 }
 
 /* СЕЛЕКТОРЫ ПО ИДЕНТИФИКАТОРУ */
@@ -84,10 +87,11 @@ a:hover {
     filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
     background-color: white;
     margin-bottom: 1rem;
-    justify-items: stretch;
+    transition: transform 0.5s 0s ease;
 }
+
 .dish-element:hover {
-    border: 2px solid tomato;
+    transform: translateY(-15px);
 }
 
 .inline-ul > li {
@@ -115,16 +119,15 @@ a:hover {
 }
 
 .btn-add-to-buy-list {
-    background-color: #f1eee9;
+    background-color: rgba(241, 238, 233, 100);
     padding: 10px 30px;
     border-radius: 10px;
     border: 1px solid transparent;
     cursor: pointer;
-    transition: font-size 0.5s ease 0s;
 }
 
 .btn-add-to-buy-list:hover {
-    font-size: 0.9rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .dish-container {
@@ -135,10 +138,10 @@ a:hover {
 
 
 /* медиа-селекторы */
-@media(max-width: 800px) {
+@media(max-width: 900px) {
 
     header {
-    position: fixed;
+    position: static;
     top: 0px;
     left: 0px;
     right:0px;
@@ -148,7 +151,7 @@ a:hover {
     justify-content: space-between;
     background-color: black;
     color: white;
-    padding: 0 0;
+    padding: 0 2rem;
 }
 
 
@@ -160,14 +163,13 @@ a:hover {
 
     nav {
         align-self: center;
-        justify-self: flex-start;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 1fr);
+        grid-row: n;
+        justify-items: center;
         font-size: 1.5rem;
+        text-wrap: nowrap;
     }
-
 }
 
 
@@ -179,7 +181,7 @@ a:hover {
     }
 
     header {
-    position: fixed;
+    position: static;
     top: 0px;
     left: 0px;
     right:0px;
@@ -201,14 +203,11 @@ a:hover {
 
     nav {
         align-self: center;
-        
-        justify-self: flex-start;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 15px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
         font-size: 1.5rem;
+        text-wrap: nowrap;
     }
     
     nav > a {

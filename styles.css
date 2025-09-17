@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -9,35 +8,26 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 h1, h2, p {
     color: black;
-    font-family: "Inter", sans-serif;
     padding: 0 1rem;
 }
 
 h1 {
     font-size: 2rem;
+    text-align: center;
 }
 
 h2 {
     font-size: 1.5rem;
 }
 
-p {
-    font-size: 1rem;
-}
-
-a {
-    color: black;
-    transition: color 0.5s;
-    cursor: pointer;
-}
-
-a:hover {
-    color: green;
-}
 
 img {
     display: block;
@@ -85,28 +75,55 @@ table tbody td {
 }
 
 /* Header */
-header {
-    width: 100%;
-    padding: 1rem 0;
-}
-
-header > nav {
-    padding: 0;
-    margin: 1rem 0;
-}
-
-header > nav > ul {
-    padding: 0;
+.header {
+    color: white !important;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2; 
     display: flex;
     flex-direction: row;
-    list-style-type: none;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 0 2rem;
+    height: 80px;
 }
+
+.header h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+#current-page-nav {
+    color: orange;
+}
+
+
+nav {
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    font-size: 1.5rem;
+    text-wrap: nowrap;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s ease 0s;
+}
+
+a:hover {
+    color: rgb(77, 140, 37);
+} 
 
 /* main */
 main {
+    margin-top: 1rem;
     text-align: start;
     width: 100%;
 }
@@ -116,36 +133,66 @@ main {
 }
 
 /* footer */
-footer {
-    display: block;
-    margin-top: 2rem;
-    width: 100%;
+.footer {
     background-color: black;
-    padding: 1rem;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    font-size: 1.5rem;
 }
 
-footer p {
+.footer p {
     color: white;
     margin: 0;
 }
 
-footer p > a {
-    color: grey;
+.footer p > a {
     font-weight: bold;
 }
 
 /* Медиа-запросы */
 @media (max-width: 1024px) {
-
-    
-    header > nav > ul {
-        gap: 1rem;
+    main {
+        padding: 0 1rem;
     }
 }
 
 @media (max-width: 768px) {
+    .header {
+        color: white !important;
+        position: static;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: 2; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-color: black;
+        color: white;
+        height: auto;
+        padding: 1rem 0;
+    }
+    nav {
+        align-self: center;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        font-size: 1.5rem;
+        text-wrap: nowrap;
+    }
+
     h1 {
         font-size: 1.8rem;
+        margin: 0 0;
+        margin-bottom: 0.5rem;
     }
     
     h2 {
@@ -166,21 +213,39 @@ footer p > a {
     table tbody td {
         padding: 0.4rem;
     }
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        padding: 1rem 1rem;
+        font-size: 1rem;
+    }
+
+    .footer .contact {
+        padding: 0.5rem;
+        text-wrap: nowrap;
+    }
+
+    .footer .bye-p {
+        text-align: end;
+
+    }
 }
 
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5rem;
-        padding: 0 0.5rem;
+        padding: 0 0;
     }
     
     h2 {
         font-size: 1.2rem;
-        padding: 0 0.5rem;
+        padding: 0 0;
     }
     
     p {
-        padding: 0 0.5rem;
+        padding: 0 0;
         font-size: 0.9rem;
     }
     
@@ -188,12 +253,13 @@ footer p > a {
         padding: 0 0;
     }
     
-    header > nav > ul {
-        gap: 0.5rem;
-    }
-    
-    header > nav > ul li a {
-        font-size: 0.9rem;
+    nav {
+        align-self: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        font-size: 1.5rem;
+        text-wrap: nowrap;
     }
     
     table {
@@ -210,7 +276,7 @@ footer p > a {
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
     table {
         font-size: 0.75rem;
     }
